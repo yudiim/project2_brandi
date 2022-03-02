@@ -1,0 +1,336 @@
+/* 보완해야 할 것
+1. 전체 스와이퍼 추가
+2. 제품 상세페이지 추가
+3. a태그 url 추가 */
+
+
+
+@font-face {
+    font-family: 'NanumSquareR';
+    src: url(../font/NanumSquareR.woff);
+}
+@font-face {
+    font-family: 'NanumSquareB';
+    src: url(../font/NanumSquareB.woff);
+}
+@font-face {
+    font-family: 'esamanru-Light';
+    src: url(../font/esamanru-Light.woff);
+}
+@font-face {
+    font-family: 'esamanru-Medium';
+    src: url(../font/esamanru-Medium.woff);
+}
+
+
+/* 1200 , 960 , 640 , 460 */
+
+*{ margin: 0; padding: 0;}
+
+body,html{ font-family: 'NanumSquareR',serif;}
+a{ text-decoration: none;}
+ul{ list-style: none;}
+img{ width: 100%;}
+
+#wrap{ background-color: #E4EFF3;}
+.center{ width:95% ; min-width: 961px; max-width: 1024px; margin: 0 auto; position: relative; }
+
+.itemStore{ text-indent: 20px; font-size: 23px; line-height: 70px; padding-top: 20px;}
+.itemName{ text-indent: 20px; font-size: 25px; line-height: 70px;}
+.itemDiscount{ text-indent: 20px; display:inline-block; font-size: 25px; line-height: 70px; color: red;}
+.itemPrice{ text-indent: 10px; display:inline-block; font-size: 25px; line-height: 70px; font-weight: bold;}
+.itemCost{ text-indent: 5px; display:inline-block; font-size: 25px; line-height: 80px; }
+.itemPurchase{ text-indent: 20px; font-size: 22px; color: #888484; padding-top: 20px;}
+.itemReview{ text-indent: 20px; font-size: 22px; color: #888484;}
+.itemScore{ text-indent: 20px; font-size: 22px; color: #888484;}
+
+.reviewName{ text-indent: 35px; line-height: 60px; padding-top: 20px; font-size: 22px; padding-top: 20px;}
+.reviewScope{ text-indent: 35px; line-height: 60px; font-size: 24px;}
+.reviewSize{ text-indent: 35px; padding: 20px 0; font-size: 23px;}
+.reviewInfo{ text-indent: 35px; line-height: 60px; color:#888484; font-size: 22px;}
+
+#header{ padding-bottom: 120px;}
+
+#header .coupons{ 
+    /* background-color: rgba(0, 0, 0, 0.5);  */
+    position: absolute; bottom:130px}
+#header .coupons .coupon { width: 50%; float: left; padding:0 4.167%; box-sizing: border-box;}
+#header .coupons .text{display: block; width: 88.51%; height: 80px; 
+    background-color: #024059; color: #fff; text-align: center; line-height: 80px;
+    /* margin: 0 9.999%; */
+    font-size: 24px;}
+#header .coupons .coupon_m{ display: none;}
+#header p{font-size: 24px; padding-top: 270px; margin-left: 3.33%;}
+
+#topBtn{ width: 52px; height: 52px; line-height: 52px; background-color: #82A4B9; text-align: center; border-radius: 26px; z-index: 999; color: #fff; font-size: 14px;
+    position: fixed; bottom: 35px; right: 35px; cursor: pointer;}
+
+.s1{ height: 1770px;}
+.s1 .dailylook_banner01{padding-bottom: 33px; width: 100%; height: 680px;}
+.s1 .slide01{ width: 100%; height: 1040px;}
+.s1 .content_item01{float: left; padding: 0 0.583%; width: 100%; height: 950px; padding-bottom: 10px;}
+.s1 span.item0101{ display: block; width: 100%; height: 405px; background-color: #fff;}
+
+.s2{ height: 1770px;}
+.s2 .dailylook_banner02{padding-bottom: 33px; width: 100%; height: 680px;}
+.s2 .slide02{ width: 100%; height: 1040px;}
+.s2 .content_item02{float: left; padding: 0 0.583%; width: 100%; height: 950px; padding-bottom: 10px;}
+.s2 span.item0202{ display: block; width: 100%; height: 405px; background-color: #fff;}
+
+.s3{ height: 1770px;}
+.s3 .dailylook_banner03{padding-bottom: 33px; width: 100%; height: 680px;}
+.s3 .slide03{ width: 100%; height: 1040px;}
+.s3 .content_item03{float: left; padding: 0 0.583%; width: 100%; height: 950px; padding-bottom: 10px;}
+.s3 span.item0303{ display: block; width: 100%; height: 405px; background-color: #fff;}
+
+.s4{ height: 1300px;}
+.s4 .slide04{ height: 950px;}
+.s4 .s4_title{text-align: center; line-height: 120px; box-sizing: border-box; font-size: 38px;}
+.s4 .article_review{width: 100%; height: 920px; float: left; padding: 0 1.25%;}
+.s4 span.review0101{ display: block; width: 100%; height: 416px; background-color: #fff;}
+.s4 .text02{ display: block; float: left; width: 43%; height: 88px; 
+    background-color: #024059; color: #fff; font-size: 30px;
+    text-align: center; line-height: 88px; margin: 80px 28.5%;}
+
+.s1_m{ display: none;}
+.s2_m{ display: none;}
+.s3_m{ display: none;}
+.s4_m{ display: none;}
+
+.s5{ height: 190px; padding-bottom: 80px;}
+.s5 .center{ width: 80%}
+.s5 h2{ text-align: center; line-height: 90px; font-size: 28px;}
+.s5 .sns_icon{ width: 31.875%; height: 88px; margin: 0 34.25%;}
+/* .s5 .sns_icon{ width: 306px; height: 88px; margin: 0 447px;} */
+.s5 .sns_icon li{ float: left; width: 19.608%; margin: 0 2.614%;}
+
+#footer{ height: 682px; background-color: #fff;}
+#footer .footer_logo{ width: 34.25%; padding: 0 31.583%;}
+#footer .text03{ padding: 20px 0; border-bottom: 1px solid rgb(32, 32, 32); font-size: 18px; line-height: 40px;}
+#footer address{ font-style: normal; padding-top: 20px; font-size: 18px; line-height: 40px;}
+#footer .text04{ font-size: 18px; padding-top: 20px; box-sizing: border-box;}
+#footer .text05{ font-size: 18px; padding-top: 20px; box-sizing: border-box;}
+
+/* mobile */
+@media screen and (max-width:460px) {
+    .center{ min-width: 395px;}
+
+    .itemStore{ font-size: 18px; line-height: 45px; text-indent: 30px;}
+    .itemName{ font-size: 18px; line-height: 45px; text-indent: 30px;}
+    .itemDiscount{ font-size: 18px; line-height: 45px; text-indent: 30px;}
+    .itemPrice{ font-size: 18px; line-height: 45px; text-indent: 20px;}
+    .itemCost{ font-size: 18px; line-height: 45px; }
+    .itemPurchase{ font-size: 16px; text-indent: 30px;}
+    .itemReview{ font-size: 16px; text-indent: 30px;}
+    .itemScore{ font-size: 16px; text-indent: 30px;}
+
+    .reviewName{ font-size: 14px; line-height: 25px; text-indent: 15px;}
+    .reviewScope{ font-size: 14px; line-height: 25px; text-indent: 15px;}
+    .reviewSize{ font-size: 14px; text-indent: 15px;}
+    .reviewInfo{ font-size: 15px; line-height: 25px; text-indent: 15px;}
+
+    #header{ padding-bottom: 20px;}
+    #header .coupons{ width: 100%; position: absolute; bottom: 80px;}
+    #header .coupons .coupon img{ display: none;}
+    #header .coupons .text{display: none;}
+    #header .coupons .coupon_m { display: block; width: 84.783%; float: left; 
+        margin-left: 7.981%;}
+    #header .coupons .coupon_m .text_m{ display: block; width: 93.846%; height: 30px; 
+        background-color: #024059; color: #fff; 
+        text-align: center; line-height: 30px;
+        font-size: 13px;}
+    #header p{font-size: 14px; padding-top: 130px;}
+
+    .s1{ display: none;}
+    .s2{ display: none;}
+    .s3{ display: none;}
+    .s4{ display: none;}
+
+    .s1_m{ display: block; margin: 0 auto; width: 100%; height: 1010px;}
+    .s1 .slide01_m{ height: 770px;}
+    .s1_m img{ width: 100%;}
+    .s1_m .dailylook_banner01_m{ width: 100%; height: 260px; margin-bottom: 0;}
+    .s1_m .article_m_item01{ width: 99.348%; height: 737px;}
+    .s1_m .article_m_item01>span{ display: block; width: 100%; height: 280px; background-color: #fff;}
+    
+    .s2_m{ display: block; margin: 0 auto; width: 100%; height: 1010px;}
+    .s2 .slide02_m{ height: 770px;}
+    .s2_m img{ width: 100%;}
+    .s2_m .dailylook_banner02_m{ width: 100%; height: 260px; margin-bottom: 0;}
+    .s2_m .article_m_item02{ width: 99.348%; height: 737px;}
+    .s2_m .article_m_item02>span{ display: block; width: 100%; height: 280px; background-color: #fff;}
+    
+    .s3_m{ display: block; margin: 0 auto; width: 100%; height: 1010px;}
+    .s3 .slide03_m{ height: 770px;}
+    .s3_m img{ width: 100%;}
+    .s3_m .dailylook_banner03_m{ width: 100%; height: 260px; margin-bottom: 0;}
+    .s3_m .article_m_item03{ width: 99.348%; height: 737px;}
+    .s3_m .article_m_item03>span{ display: block; width: 100%; height: 280px; background-color: #fff;}
+    
+    .s4_m{ display: block; margin: 0 auto; height: 790px;}
+    .s4 .slide04_m{ height: 470px;}
+    .s4_m .s4_m_title{text-align: center; line-height: 100px; font-size: 20px}
+    .s4_m .article_review_m{width: 66.957%; height: 490px; float: left; margin: 0 16.304%;}
+    .s4_m img{ width: 100%;}
+    .s4_m span.review0101{ display: block; width: 100%; height: 200px; background-color: #fff;}
+    .s4_m .text02_m{ display: block; float: left; width: 66.087%; height: 52px; 
+    background-color: #024059; color: #fff; font-size: 20px;
+    text-align: center; line-height: 52px; margin: 80px 16.522%;}
+
+    .s5{ height: 200px;}
+    .s5 h2{ font-size: 20px;}
+    .s5 .sns_icon{ width: 68.261%; margin: 0; padding: 0 15.87%;}
+    .s5 .sns_icon li{ width: 20.382%; height: 64px; margin: 0 2.23%; }
+    .s5 .sns_icon li img{ width: 100%;}
+
+    #footer{ height: 600px;}
+    #footer .footer_logo{ width: 40%; height: 62px; padding: 23px 30.87%; }
+    #footer .text03{ font-size: 13px; line-height: 25px;}
+    #footer address{ font-size: 13px; line-height: 25px;}
+    #footer .text04{ font-size: 13px; line-height: 30px;}
+    #footer .text05{ font-size: 13px; line-height: 25px;}
+}
+
+/* tablet1 */
+@media screen and (min-width:461px) and (max-width:640px) {
+    .center{ min-width: 461px; max-width: 640px;}
+
+    .itemStore{ font-size: 14px; line-height: 35px; padding-top: 15px;}
+    .itemName{ font-size: 14px; line-height: 35px;}
+    .itemDiscount{ font-size: 14px; line-height: 35px;}
+    .itemPrice{ font-size: 14px; line-height: 35px;}
+    .itemCost{ font-size: 12px; line-height: 35px;}
+    .itemPurchase{ font-size: 12px;}
+    .itemReview{ font-size: 12px;}
+    .itemScore{ font-size: 12px;}
+
+    .reviewName{ font-size: 14px; line-height: 35px; text-indent: 15px; padding-top: 15px;}
+    .reviewScope{ font-size: 14px; line-height: 35px; text-indent: 15px;}
+    .reviewSize{ font-size: 12px; text-indent: 15px;}
+    .reviewInfo{ font-size: 12px; line-height: 35px; text-indent: 15px;}
+
+    #header{ padding-bottom: 70px;}
+    #header .coupons{ position: absolute; bottom:70px;}
+    #header .coupons .coupon { width: 50%; float: left; padding:0 4.686%; box-sizing: border-box;}
+    #header .coupons .text{display: block; width: 69.063%; height: 42px; 
+        background-color: #024059; color: #fff; 
+        text-align: center; line-height: 42px;
+        font-size: 20px;}
+    #header .coupons .coupon_m{ display: none;}
+    #header p{font-size: 14px; padding-top: 150px;}
+
+    .s1{ height: 930px;}
+    .s1 .slide01{ height: 530px;}
+    .s1 .dailylook_banner01{ width: 100%; height: 362px; padding-bottom: 0;}
+    .s1 .content_item01{ width: 100%; height: 520px;}
+    .s1 span.item0101{ width: 100%; height: 206px;}
+    
+    .s2{ height: 930px;}
+    .s2 .slide02{ height: 530px;}
+    .s2 .dailylook_banner02{ width: 100%; height: 362px; padding-bottom: 0;}
+    .s2 .content_item02{ width: 100%; height: 520px;}
+    .s2 span.item0202{ width: 100%; height: 206px;}
+    
+    .s3{ height: 930px;}
+    .s3 .slide03{ height: 530px;}
+    .s3 .dailylook_banner03{ width: 100%; height: 362px; padding-bottom: 0;}
+    .s3 .content_item03{ width: 100%; height: 520px;}
+    .s3 span.item0303{ width: 100%; height: 206px;}
+    
+    .s4{ height: 817px; min-width: 580px;}
+    .s4 .slide04{ height: 530px;}
+    .s4 .article_review{ width: 100%; height: 510px; padding: 0 0.781%;}
+    .s4 span.review0101{ width: 100%; height: 206px;}
+    .s4 .text02{ width: 54.375%; font-size: 22px; margin: 50px 22.815%;}
+
+    .s5 h2{ line-height: 85px; font-size: 22px; padding-top: 28px; box-sizing: border-box;}
+    .s5 .sns_icon{ width: 73.438%; height: 88px; margin-left: 26.02%;}
+    .s5 .sns_icon li{ width: 12.644%;}
+
+    .s1_m{ display: none;}
+    .s2_m{ display: none;}
+    .s3_m{ display: none;}
+    .s4_m{ display: none;}
+    
+    #footer{ height: 819px; }
+    #footer .footer_logo{ width: 50.219%; padding: 22px 25.563%}
+    #footer .text03{ font-size: 14px; line-height: 30px;}
+    #footer address{ font-size: 14px; line-height: 30px;}
+    #footer .text04{ font-size: 14px; line-height: 35px;}
+    #footer .text05{ font-size: 14px; line-height: 30px;}
+}
+
+/* tablet2 */
+@media screen and (min-width:641px) and (max-width:960px) {
+    .center{ min-width: 641px; max-width: 960px;}
+
+    .itemStore{ text-indent: 20px; font-size: 18px; line-height: 50px; padding-top: 20px;}
+    .itemName{ text-indent: 20px; font-size: 18px; line-height: 50px;}
+    .itemDiscount{ text-indent: 20px; display:inline-block; font-size: 16px; line-height: 50px; color: red;}
+    .itemPrice{ text-indent: 10px; display:inline-block; font-size: 16px; line-height: 50px; font-weight: bold;}
+    .itemCost{ text-indent: 5px; display:inline-block; font-size: 16px; line-height: 70px; }
+    .itemPurchase{ text-indent: 20px; font-size: 16px; color: #888484; padding-top: 20px;}
+    .itemReview{ text-indent: 20px; font-size: 16px; color: #888484;}
+    .itemScore{ text-indent: 20px; font-size: 16px; color: #888484;}
+
+    .reviewName{ text-indent: 20px; line-height: 40px; padding-top: 20px; font-size: 16px; padding-top: 25px;}
+    .reviewScope{ text-indent: 20px; line-height: 40px; font-size: 18px;}
+    .reviewSize{ text-indent: 20px; padding: 20px 0; font-size: 16px;}
+    .reviewInfo{ text-indent: 20px; line-height: 40px; color:#888484; font-size: 16px;}
+
+
+    #header{ padding-bottom: 100px;}
+    #header .coupons{ position: absolute; bottom:100px;}
+    #header .coupons .text{display: block; width: 68.958%; height: 63px; 
+        background-color: #024059; color: #fff; 
+        font-size: 20px; line-height: 63px; text-align: center;}
+    #header .coupons .coupon_m{ display: none;}
+    #header p{font-size: 20px; padding-top: 200px;}
+
+    .s1{ height: 1410px;}
+    .s1 .dailylook_banner01{ width: 99.792%; height: 542px; padding-bottom: 0;}
+    .s1 .slide01{ height: 790px;}
+    .s1 .content_item01{ width: 100%; height: 790px;}
+    .s1 span.item0101{ width: 100%; height: 322px;}
+    .s1 img{ width:100%;}
+    
+    .s2{ height: 1410px;}
+    .s2 .slide02{ height: 790px;}
+    .s2 .dailylook_banner02{ width: 99.792%; height: 542px; padding-bottom: 0;}
+    .s2 .content_item02{ width: 100%; height: 790px;}
+    .s2 span.item0202{ width: 100%; height: 322px;}
+    .s2 img{ width:100%;}
+    
+    .s3{ height: 1410px;}
+    .s3 .slide03{ height: 790px;}
+    .s3 .dailylook_banner03{ width: 99.792%; height: 542px; padding-bottom: 0;}
+    .s3 .content_item03{ width: 100%; height: 790px;}
+    .s3 span.item0303{ width: 100%; height: 322px;}
+    .s3 img{ width:100%;}
+    
+    .s4{ height: 1000px;}
+    .s4 .slide04{ height: 700px;}
+    .s4 .article_review{ width: 100%; height: 687px; padding: 0 0.833%;}
+    .s4 span.review0101{ width: 100%; height: 280px;}
+    .s4 .text02{ width: 50.52%; font-size: 23px; margin: 30px 24.91%;}
+
+    .s1_m{ display: none;}
+    .s2_m{ display: none;}
+    .s3_m{ display: none;}
+    .s4_m{ display: none;}
+
+    .s5{ height: 190px; padding-bottom: 20px;}
+    .s5 .center{ width:66.667%;}/* 640px */
+    .s5 h2{ text-align: center; line-height: 70px; font-size: 23px;}
+    .s5 .sns_icon{ width: 47.813%; height: 88px; margin: 0 24.922%;}
+    /* .s5 .sns_icon{ width: 306px; height: 88px; margin: 0 447px;} */
+    .s5 .sns_icon li{ float: left; width: 19.608%; margin: 0 2.614%;}
+
+
+    #footer{ height: 579px;}
+    #footer .footer_logo{ width: 36.354%; padding: 0 30.521%;}
+    #footer .text03{ font-size: 14px; line-height: 35px;}
+    #footer address{ font-size: 14px; line-height: 35px;}
+    #footer .text04{ font-size: 14px; line-height: 35px;}
+    #footer .text05{ font-size: 14px; line-height: 35px;}
+}

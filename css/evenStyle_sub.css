@@ -1,0 +1,26 @@
+/* 1200 / 960 / 640 / 460 */
+
+*{ margin: 0; padding: 0;}
+ul{ list-style: none;}
+a{ text-decoration: none;}
+
+#wrap{ background-color: wheat;}
+.center{ width: 1200px; margin: 0 auto; background-color: rgba(0, 0, 0, 0.7);}
+
+#header{ height: 332px; background-color: rosybrown;}
+#header .top_header{ height: 252px; background-color: yellow;}
+#header .main_logo{ width: 450px; height: inherit; background-color: rgba(0, 0, 0, 0.7);
+float: left; }
+#header .search{ width: 405px; height: inherit; background-color: rgba(0, 0, 0, 0.7);
+float: right; }
+#header .icons{ width: 208px; height: inherit; background-color: rgba(0, 0, 0, 0.7);
+float: right; }
+
+#header #gnb{ height: 80px; background-color: violet;}
+
+
+#container{ height: 17902px; background-color: seagreen;}
+#container .productInfo{ height: 1229px; background-color: thistle;}
+#container .productDetailInfo{ height: 16673px; background-color: tan;}
+
+#footer{ height: 485px; background-color: steelblue;}
